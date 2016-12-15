@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>不欢迎你</title>
+</head>
+<body>
+不欢迎你来到这里
+{{ string}}
+<p>
+{% for i in TutorialList %}
+<p>{{ i }}</p>
+{% endfor %}
+</p>
+<p>
+{% for key, value in info_dict.items %}
+{{ key }}:{{ value }}
+{% endfor %}
+</p>
+<p>
+{% for item in List %}
+{{ item }}{% if not forloop.counter %},{% endif %}
+{% endfor %}
+</p>
+<p>
+{% url 'add' 5 6 as the_url %}
+</p>
+<a href="{% url 'add' 5 6 %}"> </a>
+<a href="{{ the_url }}"> the </a>
+
+<p>
+{% if num <= 100 and num >= 0 %}
+num 在0到100之间
+{% else %}
+数值不在范围之内
+{% endif %}
+</p>
+<p>
+{% if 'Django' in TutorialList %}
+Django在列表中
+{% else %}
+Django不在列表中
+{% endif %}
+</p>
+<h1>{{ request.user}}</h1>
+<p>{{ request.path }}</p>
+<p>{{ request.GET.urlencode }}</p>
+</body>
+</html>
