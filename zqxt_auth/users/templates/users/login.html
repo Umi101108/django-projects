@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n bootstrap3 %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-1 col-md-3">
+    </div>
+
+    <div class="col-xs-10 col-md-6">
+        <form class="form-horizontal" role="form" method="post" action=".">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+             <button type="submit" class="btn btn-info">
+                {% trans 'Log in' %}
+             </button>
+            {% endbuttons %}
+            <input type="hidden" name="next" value="{{ next }}" />
+
+            <div class="form-group">
+                <a class="btn btn-danger btn-sm" href="{% url 'users_password_reset' %}">{% trans "Forgot password" %}?</a>
+                <a class="btn btn-success btn-sm" href="{% url 'users_register' %}">{% trans "Register" %}</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-xs-1 col-md-3">
+    </div>
+</div>
+{% endblock %}

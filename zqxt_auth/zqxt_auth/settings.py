@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'django.contrib.sites',
     'users',
+    # 'utils',
 ]
 
 AUTH_USER_MODEL = 'users.User'
