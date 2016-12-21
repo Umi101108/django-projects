@@ -9,6 +9,9 @@ class BlogsPost(models.Model):
 	body = models.TextField()
 	timestamp = models.DateTimeField()
 
+	def __unicode__(self):
+		return self.title
+
 class BlogPostAdmin(admin.ModelAdmin):
 	list_display = ('title', 'timestamp')
 
