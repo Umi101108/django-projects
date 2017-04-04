@@ -1,0 +1,10 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('wwDjango site admin') }}{% endblock %}
+
+{% block branding %}
+<!-- <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Polls Administration') }}</a></h1> -->
+<h1 id="site-name"><a href="{% url 'admin:index' %}">人力资源管理信息系统</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
