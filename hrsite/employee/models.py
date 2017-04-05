@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+
 class EmployeeInformation(models.Model):
     name = models.CharField("姓名",max_length=20, blank=True, null=True)
     rank = models.IntegerField(blank=True, null=True)
@@ -35,6 +36,13 @@ class EmployeeInformation(models.Model):
     relationship = models.CharField(max_length=20, blank=True, null=True)
     contact_number = models.CharField(max_length=20, blank=True, null=True)
     work_experience = models.CharField(max_length=200, blank=True, null=True)
+
+    def countnumber(self):
+        # return date.today() - self.entrytime
+        return '233'
+    countnumber.short_description = '2333'
+    test = property(countnumber)
+
 
     class Meta:
         managed = False
