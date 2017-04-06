@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for hrsite project.
 
@@ -95,6 +96,11 @@ DATABASES = {
         'PASSWORD': 'password',
         'HOST': '139.224.10.164',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8',
+            'autocommit': True,
+        }
     }
 }
 
@@ -124,7 +130,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 # LANGUAGE_CODE = 'zh_CN'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -137,3 +144,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+MEDIA_ROOT = 'media'
+MEDIA_URL = '/media/'

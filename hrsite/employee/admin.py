@@ -2,9 +2,11 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import EmployeeInformation
+from .models import EmployeeInformation, VacationRecord
 
-
+class VacationRecordInline(admin.TabularInline):
+    model = VacationRecord
+    extra = 3
 
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'rank', 'department', 'post', 'countnumber', 'test')
@@ -25,7 +27,8 @@ class EmployeeAdmin(admin.ModelAdmin):
     					'classes': ['collapse']}),
     	('紧急联系人', {'fields': [('emergency_contact', 'relationship'), 'contact_number'],
     					'classes': ['collapse', 'wide']})
-
     ]
+
+    inlines = [VacationRecordInline]
 
 admin.site.register(EmployeeInformation, EmployeeAdmin)

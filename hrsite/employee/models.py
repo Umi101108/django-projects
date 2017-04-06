@@ -49,3 +49,14 @@ class EmployeeInformation(models.Model):
         db_table = 'employee_information'
         verbose_name = '员工信息'
         verbose_name_plural = '员工信息'
+
+class VacationRecord(models.Model):
+    employee = models.ForeignKey(EmployeeInformation)
+    vacation_type = models.CharField(max_length=20, blank=True, null=True)
+    vacation_time = models.DateField(blank=True, null=True)
+    vacation_days = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'vacation_record'
+
