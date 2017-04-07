@@ -29,6 +29,7 @@ class EmployeeAdmin(admin.ModelAdmin):
     					'classes': ['collapse', 'wide']})
     ]
 
+
     # inlines = [VacationRecordInline]
 
 admin.site.register(EmployeeInformation, EmployeeAdmin)
