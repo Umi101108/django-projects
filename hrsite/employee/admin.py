@@ -4,9 +4,9 @@ from django.contrib import admin
 # Register your models here.
 from .models import EmployeeInformation, VacationRecord
 
-class VacationRecordInline(admin.TabularInline):
-    model = VacationRecord
-    extra = 3
+# class VacationRecordInline(admin.TabularInline):
+#     model = VacationRecord
+#     extra = 3
 
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'rank', 'department', 'post', 'countnumber', 'test')
@@ -29,6 +29,6 @@ class EmployeeAdmin(admin.ModelAdmin):
     					'classes': ['collapse', 'wide']})
     ]
 
-    inlines = [VacationRecordInline]
+    # inlines = [VacationRecordInline]
 
 admin.site.register(EmployeeInformation, EmployeeAdmin)
