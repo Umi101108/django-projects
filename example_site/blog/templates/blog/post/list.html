@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block content %}
+	<h1>My Blog</h1>
+	{% for post in posts %}
+		<h2>
+			<a href="{{ post.get_absolute_url }}">
+				{{ post.title }}
+			</a>
+		</h2>
+		<p class="date">
+			Published {{ post.publish }} by {{ post.author }}
+		</p>
+		{{ post.body|truncatewords:30|linebreaks }}  
+		<!-- truncatewords 用来缩短内容限制在一定字数内； linebreaks用来转换内容中的换行符为html的换行符 -->
+	{% endfor %}
+	<!-- {% include "pagination.html" with page=posts %} -->
+	{% include "pagination.html" with page=page_obj %}
+{% endblock %}
