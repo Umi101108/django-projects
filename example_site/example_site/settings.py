@@ -137,6 +137,6 @@ STATIC_URL = '/static/'
 
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_HOST_USER = 'wangwei101108@foxmail.com'
-EMAIL_HOST_PASSWORD = '19930927ecust'
+EMAIL_HOST_PASSWORD = 'bunengkano'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
