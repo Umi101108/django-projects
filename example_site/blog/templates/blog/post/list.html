@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load blog_tags %}
 
 {% block title %}My Blog{% endblock %}
 
@@ -30,8 +31,9 @@
 		<p class="date">
 			Published {{ post.publish }} by {{ post.author }}
 		</p>
-		{{ post.body|truncatewords:30|linebreaks }}  
+		<!-- {{ post.body|truncatewords:30|linebreaks }}   -->
 		<!-- truncatewords 用来缩短内容限制在一定字数内； linebreaks用来转换内容中的换行符为html的换行符 -->
+		{{ post.body|markdown|truncatewords_html:30 }}
 	{% endfor %}
 	{% include "pagination.html" with page=posts %}
 	<!-- {% include "pagination.html" with page=page_obj %} -->
