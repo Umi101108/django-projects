@@ -4,3 +4,23 @@
 	<h1>{{ image.title }}</h1>
 	![]({{ image.image.url }})
 	{% with total_likes=image.users_like.count %}
+		<div class="image-info">
+			<div>
+				<span class="count">
+					{{ total_likes }}like{{ total_likes|pluralize }}
+				</span>
+			</div>
+			{{ image.description|linebreaks }}
+		</div>
+		<div class="image_links">
+			{% for user in image.users_like.all %}
+				<div>
+					![]({{ user.profile.photo.url }})
+					<p>{{ user.first_name }}</p>
+				</div>
+			{% empty %}
+				Nobody likes this image yet.
+			{% endfor %}
+		</div>
+	{% endwith %}
+{% endblock %}
