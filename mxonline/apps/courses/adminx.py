@@ -1,13 +1,9 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Date    : 2017-04-27 22:37:37
-# @Author  : Umi (wangwei101108@foxmail.com)
-# @Link    : http://umi101108.com
-# @Version : $Id$
-
-import os
-from .models import Course, Lesson, Video, CourseResource
+__author__ = 'umi'
+__date__ = '2017/5/14 下午9:42'
 import xadmin
+
+from .models import Course, Lesson, Video, CourseResource
 
 class CourseAdmin(object):
     list_display = ['name', 'desc', 'detail', 'degree', 'learn_times', 'students']
@@ -21,7 +17,7 @@ class LessonAdmin(object):
     list_filter = ['course__name', 'name', 'add_time']
 
 
-class ViderAdmin(object):
+class VideoAdmin(object):
     list_display = ['lesson', 'name', 'add_time']
     search_fields = ['lesson', 'name']
     list_filter = ['lesson', 'name', 'add_time']
@@ -35,5 +31,5 @@ class CourseResourceAdmin(object):
 
 xadmin.site.register(Course, CourseAdmin)
 xadmin.site.register(Lesson, LessonAdmin)
-xadmin.site.register(Video, ViderAdmin)
+xadmin.site.register(Video, VideoAdmin)
 xadmin.site.register(CourseResource, CourseResourceAdmin)
