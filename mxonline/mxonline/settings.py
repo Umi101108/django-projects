@@ -145,7 +145,7 @@ STATICFILES_DIRS = (
 )
 
 
-EMAIL_HOST = "smtp.qq.com"
+EMAIL_HOST = "smtp.exmail.qq.com"
 EMAIL_PORT = 465
 EMAIL_HOST_USER = "umi101108@foxmail.com"
 EMAIL_HOST_PASSWORD = "Umi19930927"

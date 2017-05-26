@@ -2,10 +2,17 @@
 __author__ = 'umi'
 __date__ = '2017/5/21 下午11:23'
 from random import Random
+import os
 from django.core.mail import send_mail
+from django.conf import settings
 
 from users.models import EmailVerifyRecord
 from MxOnline.settings import EMAIL_FROM
+# from MxOnline import settings
+
+# settings.configure()
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MxOnline.settings")
+os.environ.update({"DJANGO_SETTINGS_MODULE": "MxOnline.settings"})
 
 def send_register_email(email, send_type="register"):
     email_record = EmailVerifyRecord()
